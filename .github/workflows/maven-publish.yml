@@ -4,7 +4,8 @@
 name: passTest workflow
 
 on:
-  workflow_dispatch
+  schedule :
+   - cron: '*/5 * * * *'
 
 jobs:
   build:
@@ -39,3 +40,4 @@ jobs:
       with:
         name: testng-junit-report
         path: target
+
