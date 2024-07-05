@@ -4,8 +4,7 @@
 name: passTest workflow
 
 on:
-  schedule :
-   - cron: '*/5 * * * *'
+
 
 jobs:
   build:
