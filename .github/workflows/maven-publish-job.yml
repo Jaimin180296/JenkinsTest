@@ -29,7 +29,8 @@ jobs:
         run: |
           echo ${{ secrets.BROWSERSTACK_USERNAME }}
           echo ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-    
+
+     
     
       - name: Setup Browserstack env
         uses: browserstack/github-actions/setup-env@O11y-Rerun-Staging
@@ -38,6 +39,10 @@ jobs:
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           github-app: 'bstack-integrations-staging[bot]'
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests 2
+        run: |
+          echo "Env variable is: ${{ env }}"
 
       - name: Build with Maven
         run:  mvn clean test -Dsurefire.suiteXmlFiles=config/passtest.xml
