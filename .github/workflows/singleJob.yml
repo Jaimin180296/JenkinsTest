@@ -9,7 +9,7 @@ on:
 jobs:
   FirstTest:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
