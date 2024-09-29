@@ -6,14 +6,13 @@ on:
       - main
 
 jobs:
-  trigger-workflow:
+  trigger-other-repo:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Trigger second repo workflow
+      - name: Trigger workflow in another repo
         run: |
           curl -X POST \
-          -H "Authorization: token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-          -H "Accept: application/vnd.github.everest-preview+json" \
-          https://api.github.com/Jaimin180296/testng-browserstack/dispatches \
-          -d '{"event_type": "trigger-second-repo-workflow"}'
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN  }}" \
+          https://api.github.com/repos/Jaimin180296/Demo/actions/workflows/maven-publish.yml/dispatches \
+          -d '{"ref":"main"}'
