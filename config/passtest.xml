@@ -6,9 +6,4 @@
             <class name="com.browserstack.BrowserStackPassTest"/>
         </classes>
     </test>
-<test name="Flaky Test">
-        <classes>
-            <class name="com.browserstack.BrowserStackFlakyTest"/>
-        </classes>
-    </test>
 </suite>
