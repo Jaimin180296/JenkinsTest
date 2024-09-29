@@ -40,13 +40,6 @@ jobs:
           github-app: 'bstack-integrations-staging[bot]'
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-
-      - name: 'BrowserStack Local Tunnel Setup'  # Invokes the setup-local action
-        uses: browserstack/github-actions/setup-local@master
-        with:
-          local-testing: start
-          local-identifier: random
-
       - name: Run tests 2
         run: |
           echo "Env variable is: ${{ env }}"
