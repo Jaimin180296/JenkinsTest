@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class BrowserStackPassTest extends SeleniumTest {
+public class BrowserStackPassTest {
 
     @Test(invocationCount = 2)
     public void failureTest(ITestContext testContext) throws Exception {
