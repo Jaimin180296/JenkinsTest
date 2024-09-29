@@ -1,12 +1,19 @@
-name: trigger tests in another repository
-on: workflow_dispatch
+name: Trigger Another Repo Workflow
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  trigger-test:
+  trigger-workflow:
     runs-on: ubuntu-latest
+
     steps:
-      - name: trigger the automated test in another repo
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.GithubToken  }}
-          repository: amuthansakthivel/SeleniumAppiumTestsInGithubRunners
-          event-type: my-event
+      - name: Trigger second repo workflow
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          https://api.github.com/Jaimin180296/testng-browserstack/dispatches \
+          -d '{"event_type": "trigger-second-repo-workflow"}'
