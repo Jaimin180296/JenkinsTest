@@ -37,7 +37,7 @@ jobs:
         with:
           username:  ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          github-app: 'bstack-integrations-staging[bot]'
+          github-app: 'bstack-integrations[bot]'
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tests 2
